@@ -1,4 +1,13 @@
 {
   "name": "movingcircles",
-  "app_id": ""
+  "app_id": "77bb0520",
+  "gulpStartupTasks": [
+    "sass",
+    "watch",
+    "index"
+  ],
+  "watchPatterns": [
+    "www/**/*",
+    "!www/lib/**/*"
+  ]
 }

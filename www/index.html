@@ -5,12 +5,12 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title></title>
 
-    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
 
-    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <!-- compiled css output -->
     <link href="css/ionic.app.css" rel="stylesheet">
-    -->
+
+    <!-- inject:css -->
+    <!-- endinject -->
 
     <!-- ionic/angularjs js -->
     <script src="lib/ionic/js/ionic.bundle.js"></script>
@@ -18,17 +18,36 @@
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
-    <!-- your app's js -->
+    <!-- inject:js -->
     <script src="js/app.js"></script>
-  </head>
-  <body ng-app="starter">
+    <script src="js/controllers.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/controllers/calendar.controller.js"></script>
+    <script src="js/controllers/dashboard.controller.js"></script>
+    <script src="js/services/dashboard.service.js"></script>
+    <!-- endinject -->
 
-    <ion-pane>
-      <ion-header-bar class="bar-stable">
-        <h1 class="title">Ionic Blank Starter</h1>
-      </ion-header-bar>
-      <ion-content>
-      </ion-content>
-    </ion-pane>
+    <script src="js/services.js"></script>
+    <script src="js/controllers.js"></script>
+  </head>
+  <body ng-app="movingCirclesApp">
+
+  <ion-nav-bar class="bar-energized height">
+    <ion-nav-back-button class="button-clear">
+      <i class="ion-arrow-left-c"></i>
+    </ion-nav-back-button>
+  </ion-nav-bar>
+
+  <ion-tabs class="tabs-energized">
+    <ion-tab title="dashboard" icon="ion-ios-home" ui-sref="dashboard">
+      <ion-nav-view name="dashboard"></ion-nav-view>
+    </ion-tab>
+    <ion-tab title="help" icon="ion-help" ui-sref="help">
+      <ion-nav-view name="help"></ion-nav-view>
+    </ion-tab>
+  </ion-tabs>
+
+  <!-- This is were view template files gets injected -->
+  <ion-nav-view></ion-nav-view>
   </body>
 </html>
